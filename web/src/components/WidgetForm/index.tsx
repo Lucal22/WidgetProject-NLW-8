@@ -5,6 +5,7 @@ import ideaImageUrl from '../../assets/idea.svg'
 import thoughtImageUrl from '../../assets/thought.svg'
 import { FeedbackTypeStep } from './steps/feedbackTypeStep'
 import { FeedbackContentStep } from './steps/feedbackContentStep'
+import { FeedbackSuccessStep } from './steps/feedbackSuccessStep'
 
 
 export const feedbackTypes = {
@@ -34,26 +35,36 @@ export const feedbackTypes = {
 export type feedbackType = keyof typeof feedbackTypes
 
 export function WidgetForm() {
-    const [feedbackType, setFeedbackType]= useState<feedbackType | null>(null)
+    const [feedbackType, setFeedbackType] = useState<feedbackType | null>(null)
+    const [feedbackSent, setFeedbackSent] = useState(false)
 
-    function handleRestartFeedback(){
+    function handleRestartFeedback() {
         setFeedbackType(null)
+        setFeedbackSent(false)
     }
 
     return (
         <div className='bg-zinc-900 p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto'>
-  
-            {!feedbackType?(
+            {feedbackSent ? (
+                <FeedbackSuccessStep
+                onFeedbackRestartRequested = {handleRestartFeedback}
+                />
+            ) : (
+                <>
+                    {!feedbackType ? (
 
-            <FeedbackTypeStep 
-            onFeedbackTypeChanged = {setFeedbackType}
-            />):
+                        <FeedbackTypeStep
+                            onFeedbackTypeChanged={setFeedbackType}
+                        />) :
 
-            <FeedbackContentStep 
-            feedbackType = {feedbackType}
-            handleRestart = {handleRestartFeedback}
+                        <FeedbackContentStep
+                            feedbackType={feedbackType}
+                            handleRestart={handleRestartFeedback}
+                            onFeedbackSent={() => setFeedbackSent(true)}
+                        />}
+                </>
+            )}
 
-            />}
             <footer className='text-sx text-neutral-400'>
                 Feito por Lucal e Rocketseat
             </footer>
