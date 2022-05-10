@@ -23,7 +23,7 @@ export class SubmitFeedbackUseCase {
             throw new Error('Type and comment are required')
         }
 
-        if(screenshot && !screenshot.startsWith('data:image/png:base64')){
+        if(screenshot && !screenshot.startsWith('data:image/png;base64')){
             throw new Error('Invalid screenshot format.')
         }
 
