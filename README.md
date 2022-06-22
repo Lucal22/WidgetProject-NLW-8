@@ -21,13 +21,13 @@ Um widget feito para envio de feedbacks utilizando typescript e nodejs, desenvol
 ### Frontend
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Axios](https://axios-http.com/ptbr/docs/intro)
+- [Headlessui](https://headlessui.dev/)
 
 ### Backend
 - [Express](https://expressjs.com/pt-br/)
 - [CORS](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/CORS)
 - [Prisma](https://www.prisma.io/)
 - [Nodemailer](https://nodemailer.com/about/)
-- [Phosphor icons](https://phosphoricons.com/)
 
 ## Utilitários
 - [Phosphor icons](https://phosphoricons.com/)
