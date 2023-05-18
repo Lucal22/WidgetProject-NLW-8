@@ -10,24 +10,24 @@ import { FeedbackSuccessStep } from './steps/feedbackSuccessStep'
 
 export const feedbackTypes = {
     BUG: {
-        title: 'Problema',
+        title: 'Issue',
         image: {
             source: bugImageUrl,
-            alt: 'Imagem de um inseto'
+            alt: 'Image of insect'
         }
     },
     IDEIA: {
-        title: 'Ideia',
+        title: 'Idea',
         image: {
             source: ideaImageUrl,
-            alt: 'Imagem de uma lâmpada'
+            alt: 'Image of a lamp'
         }
     },
     OTHER: {
-        title: 'Outro',
+        title: 'Others',
         image: {
             source: thoughtImageUrl,
-            alt: 'Imagem de um balão de pensamento'
+            alt: 'Image of a baloon'
         }
     }
 }
@@ -66,7 +66,7 @@ export function WidgetForm() {
             )}
 
             <footer className='text-sx text-neutral-400'>
-                Feito por Lucal e Rocketseat
+                Made by Lucal and Rocketseat
             </footer>
 
         </div>
